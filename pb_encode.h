@@ -110,7 +110,7 @@ bool pb_encode_submessage(pb_ostream_t *stream, const pb_field_t fields[], const
  * The actual struct pointed to by src_struct must match the description in fields.
  * All required fields in the struct are assumed to have been filled in.
  */
-bool (* const pb_delim_encode)(pb_ostream_t *stream, const pb_field_t fields[], const void *src_struct) = &pb_encode_submessage;
+bool pb_delim_encode(pb_ostream_t *stream, const pb_field_t fields[], const void *src_struct);
 
 /* --- Internal functions ---
  * These functions are not terribly useful for the average library user, but

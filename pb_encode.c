@@ -481,3 +481,7 @@ bool checkreturn pb_enc_submessage(pb_ostream_t *stream, const pb_field_t *field
     return pb_encode_submessage(stream, (const pb_field_t*)field->ptr, src);
 }
 
+bool pb_delim_encode(pb_ostream_t *stream, const pb_field_t fields[], const void *src_struct) {
+    return pb_encode_submessage(stream, fields, src_struct);
+}
+
